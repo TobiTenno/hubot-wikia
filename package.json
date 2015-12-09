@@ -1,0 +1,16 @@
+{
+  "name": "hubot-wikia",
+  "optionalDependencies": {},
+  "peerDependencies": {
+    "hubot": "2.x"
+  },
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliasfalse/hubot-wikia.git"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "version": "0.0.1"
+}
