@@ -13,60 +13,33 @@
 #
 # Author:
 #   aliasfalse
-
-WIKI_DOMAIN = "warframe"
-WIKI_API_URL = "https://"+ WIKI_DOMAIN +".wikia.com/api/v1/"
-WIKI_EN_URL = "https://"+ WIKI_DOMAIN +".wikia.com/wiki/"
+wikia = require('./lib/wikia.js')
 
 module.exports = (robot) ->
-    robot.respond /wikia search (.+)/i, id: "wikipedia.search", (msg) ->
-        params =
-            action: 'opensearch'
-            format: 'json'
-            limit: 5
-            search: msg.match[1]
-
-        wikiRequest msg, params, (object) ->
-            if object[1].length is 0
-                msg.reply "No articles were found using search query: \"#{msg.match[1]}\". Try a different query."
-                return
-
-            for article in object[1]
-                msg.send "#{article}: #{createURL(article)}"
-
-    robot.respond /wikia summary (.+)/i, id: "wikipedia.summary", (msg) ->
-        params =
-            action: 'query'
-            exintro: true
-            explaintext: true
-            format: 'json'
-            prop: 'extracts'
-            titles: msg.match[1]
-
-        wikiRequest msg, params, (object) ->
-            for id, article of object.query.pages
-                if id is -1
-                    msg.reply "The article you have entered (\"#{msg.match[1]}\") does not exist. Try a different article."
-                    return
-
-                if article.extract is ""
-                    summary = "No summary available"
-                else
-                    summary = article.extract.split(". ")[0..1].join ". "
-
-                msg.send "#{article.title}: #{summary}."
-                msg.reply "Original article: #{createURL(article.title)}"
-                return
-
-createURL = (title) ->
-    "#{WIKIA_EN_URL}/#{encodeURIComponent(title)}"
-
-wikiRequest = (msg, params = {}, handler) ->
-    msg.http(WIKIA_API_URL)
-        .query(params)
-        .get() (err, res, body) ->
+    robot.respond /wikia search (.+)/i, (res) ->
+        query = res.match[1]
+        if not query
+          res.reply 'Please specify a search term'
+        else
+          wikia.wikiaSearch query, WIKI_DOMAIN, (err, data) ->
             if err
-                msg.reply "An error occurred while attempting to process your request: #{err}"
-                return robot.logger.error err
+              robot.logger.error err
+            else if not data
+              res.reply 'Not found'
+            else if robot.adapterName is 'telegram'
+              res.send util.format('[%s](%s)', data.title, data.url.replace('\\', ''))
+            else
+              res.send util.format('%s : %s', data.title, data.url.replace('\\', ''))
 
-            handler JSON.parse(body)
+    robot.respond /wikia summary (.+)/i, (res) ->
+        query = res.match[1]
+        if not query
+          res.reply 'Please specify a search term'
+        else
+          wikia.wikiaSummary query, WIKI_DOMAIN, (err, data, url) ->
+            if err
+              robot.logger.error err
+            else if not data
+              res.reply 'Not found'
+            else
+              res.send util.format('%s : \r\n%s\r\n%s', data.title, data.content.text, url.replace('\\', ''))

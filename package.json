@@ -1,16 +1,34 @@
 {
-  "name": "hubot-wikia",
-  "optionalDependencies": {},
-  "peerDependencies": {
-    "hubot": "2.x"
-  },
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aliasfalse/hubot-wikia.git"
-  },
-  "scripts": {
-    "test": "grunt test"
-  },
-  "version": "0.0.1"
+	"name" : "hubot-wikia",
+        "version" : "0.0.1",
+	"optionalDependencies" : {},
+	"peerDependencies" : {
+		"hubot" : "2.x"
+	},
+	"dependencies" : {
+		"request" : "^2.67.0",
+        "node-wikia": "^0.0.3"
+	},
+	"devDependencies" : {
+		"hubot" : "^2.17.0",
+		"coffee-script" : "^1.10.0",
+		"mocha" : "^2.3.4"
+	},
+	"keywords" : [
+		"hubot",
+		"wikia"
+	],
+	"main" : "index.coffee",
+	"homepage" : "https://github.com/aliasfalse/hubot-wikia",
+        "license": "MIT",
+	"bugs" : {
+		"url" : "https://github.com/aliasfalse/hubot-wikia/issues"
+	},
+	"repository" : {
+		"type" : "git",
+		"url" : "https://github.com/aliasfalse/hubot-wikia"
+	},
+	"scripts": {
+		"test": "script/test"
+   	}
 }
