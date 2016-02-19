@@ -7,6 +7,11 @@ exports.wikiaSearch = function(query, callback) {
   var pedia = new Wikia(domain);
   
   try{
+      var data = pedia.getSearchList(formData);
+      if(data.state){
+      	console.log(data);
+        callback(null, "No results");
+      }
       callback(null, pedia.getSearchList(formData).items[0]);
   } catch (err) {
       callback(err, null);
