@@ -1,19 +1,19 @@
 var request = require('request');
 var Wikia = require('node-wikia');
+var domain = process.env.WIKI_DOMAIN;
 
-
-exports.wikiaSearch = function(query, callback, domain) {
+exports.wikiaSearch = function(query, callback) {
   var formData = {query: query, limit: 1};
   var pedia = new Wikia(domain);
   
   try{
       callback(null, pedia.getSearchList(formData).items[0]);
   } catch (err) {
-      callback(error, null);
+      callback(err, null);
   }
 }
 
-exports.wikiaSummary = function(query, domain, callback) {
+exports.wikiaSummary = function(query, callback) {
   var formData = {query: query, limit: 1};
   
   var pedia = new Wikia(domain);
@@ -21,6 +21,6 @@ exports.wikiaSummary = function(query, domain, callback) {
   try{
       callback(null, pedia.getSearchList(formData).items[0].url,pedia.getArticleAsSimpleJson(pedia.getSearchList(formData).items[0]).sections[0]);
   } catch (err) {
-      callback(error, null);
+      callback(err, null);
   }
 }

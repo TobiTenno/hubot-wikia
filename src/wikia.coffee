@@ -21,7 +21,7 @@ module.exports = (robot) ->
         if not query
           res.reply 'Please specify a search term'
         else
-          wikia.wikiaSearch query, WIKI_DOMAIN, (err, data) ->
+          wikia.wikiaSearch query, (err, data) ->
             if err
               robot.logger.error err
             else if not data
@@ -36,7 +36,7 @@ module.exports = (robot) ->
         if not query
           res.reply 'Please specify a search term'
         else
-          wikia.wikiaSummary query, WIKI_DOMAIN, (err, data, url) ->
+          wikia.wikiaSummary query, (err, data, url) ->
             if err
               robot.logger.error err
             else if not data
