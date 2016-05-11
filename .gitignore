@@ -46,5 +46,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-#node binaries
-node_modules/
+#ignore node dependencies
+node_modules/*
