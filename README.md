@@ -32,13 +32,12 @@ See [`src/wikia.coffee`](src/wikia.coffee) for full documentation.
 
 Command | Listener ID | Description
 --- | --- | ---
-hubot wikia search `query` | `wikia.search` | Returns the first 5 Wikia articles matching the search `query`
-hubot wikia summary `article` | `wikia.summary` | Returns a one-line description about `article`
+hubot wikia `query` | `/wikia(.+)/` | Returns the first Wikia article matching the search `query`
 
 
 ## Sample Interaction
 
 ```
-user1>> hubot wikia summary elytron
+user1>> hubot wikia elytron
 hubot>> 
 ```

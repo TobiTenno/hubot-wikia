@@ -8,8 +8,7 @@
 #   WIKI_DOMAIN : wikia domain to search {ex: www, warframe, naruto, elderscrolls}
 #
 # Commands:
-#   hubot wikia search <query> - Returns the first 5 Wikipedia articles matching the search <query>
-#   hubot wikia summary <article> - Returns a one-line description about <article>
+#   hubot wikia <query> - Returns the first 5 Wikipedia articles matching the search <query>
 #
 # Author:
 #   aliasfalse
