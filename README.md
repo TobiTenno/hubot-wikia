@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/aliasfalse/hubot-wikia.png?label=ready&title=Ready)](https://waffle.io/aliasfalse/hubot-wikia)
 # hubot-wikia
 
 ##Most of the links on this page referring to the usage, installation, or api will not function currently.
