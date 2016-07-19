@@ -1,12 +1,12 @@
 {
   "name": "hubot-wikia",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "optionalDependencies": {},
   "peerDependencies": {
     "hubot": "2.x"
   },
   "dependencies": {
-    "hubot-markdown": "^1.1.1",
+    "node-md-config": "^2.0.0",
     "request": "^2.67.0"
   },
   "devDependencies": {
