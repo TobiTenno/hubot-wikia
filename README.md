@@ -1,11 +1,10 @@
-[![Stories in Ready](https://badge.waffle.io/aliasfalse/hubot-wikia.png?label=ready&title=Ready)](https://waffle.io/aliasfalse/hubot-wikia)
 # hubot-wikia
 
 ##Most of the links on this page referring to the usage, installation, or api will not function currently.
 
 [![NPM](https://nodei.co/npm/hubot-wikia.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/hubot-wikia/)
 [![Build Status](https://travis-ci.org/aliasfalse/hubot-wikia.svg)](https://travis-ci.org/aliasfalse/hubot-wikia/)
-
+[![Stories in Ready](https://badge.waffle.io/aliasfalse/hubot-wikia.png?label=ready&title=Ready)](https://waffle.io/aliasfalse/hubot-wikia)
 
 A Hubot script for interacting with [Wikia's API](http://www.wikia.com/api/v1/) (searching for articles and returning extracts).
 

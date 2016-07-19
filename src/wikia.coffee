@@ -14,7 +14,7 @@
 #   aliasfalse
 wikia = null
 request = require('request')
-md = require('hubot-markdown')
+md = require('node-md-config')
 util = require('util')
 domain = process.env.HUBOT_WIKIA_DOMAIN || 'www';
 WIKIA_URL = "http://#{domain}.wikia.com/api/v1/";
