@@ -2,7 +2,9 @@
 
 ##Most of the links on this page referring to the usage, installation, or api will not function currently.
 
+[![NPM](https://nodei.co/npm/hubot-wikia.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/hubot-wikia/)
 [![Build Status](https://travis-ci.org/aliasfalse/hubot-wikia.svg)](https://travis-ci.org/aliasfalse/hubot-wikia/)
+
 
 A Hubot script for interacting with [Wikia's API](http://www.wikia.com/api/v1/) (searching for articles and returning extracts).
 
@@ -25,7 +27,9 @@ See [`src/wikia.coffee`](src/wikia.coffee) for full documentation.
     ]
     ```
 
-3. Run your bot and see below for available config / commands
+3. Add your domain to your environment with the key `HUBOT_WIKIA_DOMAIN`
+
+4. Run your bot and see below for available config / commands
 
 
 ## Commands
@@ -39,5 +43,5 @@ hubot wikia `query` | `/wikia(.+)/` | Returns the first Wikia article matching t
 
 ```
 user1>> hubot wikia elytron
-hubot>> 
+hubot>> Elytron : http://warframe.wikia.com/wiki/Elytron
 ```
