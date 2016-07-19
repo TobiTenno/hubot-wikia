@@ -5,7 +5,7 @@
 #   None
 #
 # Configuration:
-#   WIKI_DOMAIN : wikia domain to search {ex: www, warframe, naruto, elderscrolls}
+#   HUBOT_WIKIA_DOMAIN : wikia domain to search {ex: www, warframe, naruto, elderscrolls}
 #
 # Commands:
 #   hubot wikia <query> - Returns the first 5 Wikipedia articles matching the search <query>
@@ -16,7 +16,7 @@ wikia = null
 request = require('request')
 md = require('hubot-markdown')
 util = require('util')
-domain = process.env.WIKI_DOMAIN || 'www';
+domain = process.env.HUBOT_WIKIA_DOMAIN || 'www';
 WIKIA_URL = "http://#{domain}.wikia.com/api/v1/";
 SEARCH = 'Search/List';
 
