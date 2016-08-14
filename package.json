@@ -1,6 +1,6 @@
 {
   "name": "hubot-wikia",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "optionalDependencies": {},
   "peerDependencies": {
     "hubot": "2.x"
