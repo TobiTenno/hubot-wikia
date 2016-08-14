@@ -50,7 +50,7 @@ wikiaSearch = (query, callback) ->
   return
 
 module.exports = (robot) ->
-    robot.respond /wikia(.+)/i, (res) ->
+    robot.respond /wikia?(.+)/i, id:'hubot-wikia.article', (res) ->
       type = res.match[1]
       if not type
         res.reply "#{md.codeMulti}Please specify a search term#{md.blockEnd}"

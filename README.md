@@ -36,7 +36,7 @@ See [`src/wikia.coffee`](src/wikia.coffee) for full documentation.
 
 Command | Listener ID | Description
 --- | --- | ---
-hubot wikia `query` | `/wikia(.+)/` | Returns the first Wikia article matching the search `query`
+`hubot wikia <query>` | `id:'hubot-wikia.article',` | Returns the first Wikia article matching the search `query`
 
 
 ## Sample Interaction
